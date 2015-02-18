@@ -31,29 +31,37 @@ var Pig = {
 
 $(document).ready(function(){
   var game = Object.create(Pig);
-
   var checkPlayer = function() {
     var player = game.activePlayer;
     if (player === 1) {
       $("h2#player1").css('color', 'green');
       $("h2#player2").css('color', 'grey');
+      $("#player2buttons").hide();
+      $("#player1buttons").show();
     } else {
       $("h2#player2").css('color', 'green');
       $("h2#player1").css('color', 'grey');
+      $("#player1buttons").hide();
+      $("#player2buttons").show();
     }
   };
 
+checkPlayer();
+
   $("button#roll").click(function(){
      $("#dice").text(game.rollDice());
-     refreshScores();
-     checkPlayer();
+     changePlayerAndRefreshScores();
   });
 
   $("button#hold").click(function(){
     game.hold();
+    changePlayerAndRefreshScores();
+  });
+
+  var changePlayerAndRefreshScores = function(){
     refreshScores();
     checkPlayer();
-  });
+  }
 
 var refreshScores = function(){
   $("#player1score").text(game.player1);

@@ -49,18 +49,34 @@ $(document).ready(function(){
 
   checkPlayer();
 
-  $("button#roll").click(function(){
+  var playerRoll = function() {
     var dice = game.rollDice();
     var output = "&#x268" + (dice-1) + ";";
      $("#displaydice").html(output);
      $("#dice").text(dice);
      changePlayerAndRefreshScores();
+  }
+
+  $("button#roll").click(function(){
+    playerRoll();
   });
 
   $("button#hold").click(function(){
     game.hold();
     changePlayerAndRefreshScores();
   });
+
+  $(document).keypress(function(event) {
+    if((event.which == 122) && (game.activePlayer===1)){
+      playerRoll();
+    }else if((event.which == 47) && (game.activePlayer == 2)){
+      playerRoll();
+    }else if((event.which == 32)){
+      game.hold();
+      changePlayerAndRefreshScores();
+    }
+  });
+
 
   var changePlayerAndRefreshScores = function(){
     winCheck();

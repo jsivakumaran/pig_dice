@@ -50,7 +50,10 @@ $(document).ready(function(){
   checkPlayer();
 
   $("button#roll").click(function(){
-     $("#dice").text(game.rollDice());
+    var dice = game.rollDice();
+    var output = "&#x268" + (dice-1) + ";";
+     $("#displaydice").html(output);
+     $("#dice").text(dice);
      changePlayerAndRefreshScores();
   });
 

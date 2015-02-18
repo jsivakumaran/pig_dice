@@ -20,4 +20,18 @@ describe("Pig", function(){
     } while (true);
     expect(game.currentScore).to.eql(roll);
   });
+  it("changes the active player when 1 is rolled", function(){
+    var game = Object.create(Pig);
+    game.activePlayer = 1;
+    do {
+      var roll = game.rollDice();
+    } while (roll !== 1);
+    expect(game.activePlayer).to.eql(2);
+  });
+  it("takes current score and adds to activeplayer's score when hold is pressed", function(){
+    var game = Object.create(Pig);
+    game.currentScore = 10;
+    game.hold();
+    expect(game.player1).to.eql(10);
+  })
 });

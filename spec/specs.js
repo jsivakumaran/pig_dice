@@ -33,5 +33,10 @@ describe("Pig", function(){
     game.currentScore = 10;
     game.hold();
     expect(game.player1).to.eql(10);
-  })
+  });
+  // it("checks for win condition at end of turn", function(){
+  //   var game = Object.create(Pig);
+  //   game.player1 = 100;
+  //   expect(game.winCheck()).to.eql(true);
+  // })
 });

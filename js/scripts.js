@@ -27,4 +27,4 @@ var Pig = {
     this.switchActivePlayer();
     this.currentScore = 0;
   }
-}
+};

@@ -31,7 +31,8 @@ var Pig = {
 
 $(document).ready(function(){
   var game = Object.create(Pig);
-
+  var player1wins = 0;
+  var player2wins = 0;
   var checkPlayer = function() {
     var player = game.activePlayer;
     if (player === 1) {
@@ -89,9 +90,13 @@ $(document).ready(function(){
     if(game.player1 >= 100){
       alert("Player one wins!!");
       game = Object.create(Pig);
+      player1wins+=1;
+      $("#player1wins").text(player1wins);
     } else if (game.player2 >= 100){
       alert("Player two wins!!");
       game = Object.create(Pig);
+      player2wins+=1;
+      $("#player2wins").text(player2wins);
     }
   };
 

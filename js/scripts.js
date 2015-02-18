@@ -28,3 +28,37 @@ var Pig = {
     this.currentScore = 0;
   }
 };
+
+$(document).ready(function(){
+  var game = Object.create(Pig);
+
+  var checkPlayer = function() {
+    var player = game.activePlayer;
+    if (player === 1) {
+      $("h2#player1").css('color', 'green');
+      $("h2#player2").css('color', 'grey');
+    } else {
+      $("h2#player2").css('color', 'green');
+      $("h2#player1").css('color', 'grey');
+    }
+  };
+
+  $("button#roll").click(function(){
+     $("#dice").text(game.rollDice());
+     refreshScores();
+     checkPlayer();
+  });
+
+  $("button#hold").click(function(){
+    game.hold();
+    refreshScores();
+    checkPlayer();
+  });
+
+var refreshScores = function(){
+  $("#player1score").text(game.player1);
+  $("#player2score").text(game.player2);
+  $("#current").text(game.currentScore);
+}
+
+});

@@ -8,32 +8,39 @@
     <title>Pig Dice</title>
   </head>
   <body>
+
     <div class="jumbotron">
       <div class="container">
         <h1>Pig Dice</h1>
       </div>
     </div>
+
     <div class="container">
-      <div class="col-md-4">
-        <h2 id="player1">Player 1</h2>
-        <h3>Score: <span id="player1score"></span></h3>
-      <div id="player1buttons">
-        <button id="roll">roll dice</button>
-        <button id="hold">hold</button>
-      </div>
-      </div>
-      <div class="col-md-4">
-        <h2>Roll: <span id = "dice"></span></h2>
-        <span id="displaydice"></span>
-        <h3>Current score: <span id="current"></span></h3>
-      </div>
-      <div class="col-md-4">
-        <h2 id="player2">Player 2</h2>
-        <h3>Score: <span id="player2score"></span></h3>
-      <div id="player2buttons">
-        <button id="roll">roll dice</button>
-        <button id="hold">hold</button>
-      </div>
+      <div class="row" id="main">
+
+        <div class="col-md-4">
+          <h2 id="player1">Player 1</h2>
+          <h3>Score: <span id="player1score"></span></h3>
+          <div id="player1buttons">
+            <button id="roll" class="btn btn-large btn-danger">roll dice</button>
+            <button id="hold" class="btn btn-large btn-success">hold</button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Roll: <span id = "dice"></span></h2>
+          <span id="displaydice"></span>
+          <h3>Current score: <span id="current"></span></h3>
+        </div>
+
+        <div class="col-md-4">
+          <h2 id="player2">Player 2</h2>
+          <h3>Score: <span id="player2score"></span></h3>
+          <div id="player2buttons">
+            <button id="roll" class="btn btn-large btn-danger">roll dice</button>
+            <button id="hold" class="btn btn-large btn-success">hold</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>

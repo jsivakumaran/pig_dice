@@ -49,6 +49,7 @@ $(document).ready(function(){
 
   checkPlayer();
 
+
   var playerRoll = function() {
     var dice = game.rollDice();
     var output = "&#x268" + (dice-1) + ";";

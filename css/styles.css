@@ -1,5 +1,10 @@
 #displaydice{
   font-size: 10em;
   padding: 0;
-  border: 0;
+  margin: 0;
+}
+
+#main{
+
+    text-align: center;
 }

@@ -31,6 +31,7 @@ var Pig = {
 
 $(document).ready(function(){
   var game = Object.create(Pig);
+
   var checkPlayer = function() {
     var player = game.activePlayer;
     if (player === 1) {
@@ -46,7 +47,7 @@ $(document).ready(function(){
     }
   };
 
-checkPlayer();
+  checkPlayer();
 
   $("button#roll").click(function(){
      $("#dice").text(game.rollDice());
@@ -59,14 +60,25 @@ checkPlayer();
   });
 
   var changePlayerAndRefreshScores = function(){
+    winCheck();
     refreshScores();
     checkPlayer();
   }
 
-var refreshScores = function(){
-  $("#player1score").text(game.player1);
-  $("#player2score").text(game.player2);
-  $("#current").text(game.currentScore);
-}
+  var winCheck = function(){
+    if(game.player1 >= 100){
+      alert("Player one wins!!");
+      game = Object.create(Pig);
+    } else if (game.player2 >= 100){
+      alert("Player two wins!!");
+      game = Object.create(Pig);
+    }
+  };
+
+  var refreshScores = function(){
+    $("#player1score").text(game.player1);
+    $("#player2score").text(game.player2);
+    $("#current").text(game.currentScore);
+  }
 
 });

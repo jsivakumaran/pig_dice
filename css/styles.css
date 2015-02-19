@@ -2,6 +2,7 @@
   font-size: 10em;
   padding: 0;
   margin: 0;
+  height: 163px;
 }
 
 #main{
@@ -11,5 +12,5 @@
 
 .instructions{
   text-align: center;
-  padding-top: 15em;
+  padding-top: 10em;
 }

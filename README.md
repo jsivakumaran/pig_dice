@@ -5,6 +5,7 @@ A JavaScript web app that implements the game [Pig Dice](http://en.wikipedia.org
 
 Usage
 -----
+[View site here](http://jsivakumaran.github.io/pig_dice/)
 
 In your browser, open the `pig.html` file.
 

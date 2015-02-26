@@ -12,4 +12,9 @@ pigDice.config(function($stateProvider){
     templateUrl: "partials/twoPlayer.html"
   });
 
+  $stateProvider.state('aiPlayer', {
+    url: "aiPlayer.html",
+    templateUrl: "partials/aiPlayer.html"
+  });
+
 });

@@ -1,8 +1,10 @@
-pigDice.controller('PigDiceCtrl', ['$scope', '$state',
-function PigDiceCtrl($scope, $state){
+PigDice.controller('PigDiceCtrl', ['$scope', '$state', 'PigFactory',
+function PigDiceCtrl($scope, $state, PigFactory){
 
-  $scope.pigFactory = pigFactory;
-
-    $state.go('home');
+  $scope.PigFactory = PigFactory;
+  $scope.rollDice = function(){
+    debugger;
+    var roll = PigFactory.rollDice();
+  }
 
 }]);

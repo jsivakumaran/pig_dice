@@ -1,6 +1,6 @@
-var pigDice = angular.module('pigDice', ['ui.router']);
+var PigDice = angular.module('PigDice', ['ui.router']);
 
-pigDice.config(function($stateProvider){
+PigDice.config(function($stateProvider){
 
   $stateProvider.state('home', {
     url: "",

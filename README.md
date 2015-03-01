@@ -1,7 +1,7 @@
 pig-dice
 ========
 
-A JavaScript web app that implements the game [Pig Dice](http://en.wikipedia.org/wiki/Pig_%28dice_game%29). Written with the help of [JQuery](http://jquery.com/), [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Bootstrap](http://http://getbootstrap.com/).
+A JavaScript web app that implements the game [Pig Dice](http://en.wikipedia.org/wiki/Pig_%28dice_game%29). Written with the help of [AngularJS](https://angularjs.org/) and [Bootstrap](http://http://getbootstrap.com/).
 
 Usage
 -----
@@ -22,9 +22,9 @@ Hold:            `Space`
 About
 -----
 
-Written by Clem Freeman and Jay Sivakumaran at [Epicodus](http://www.epicodus.com/).
+Written by Alex Kaufman, Clem Freeman and Jay Sivakumaran at [Epicodus](http://www.epicodus.com/).
 
 License
 -------
 
-This projected is licensed under the terms of the MIT license.
+This project is licensed under the terms of the MIT license.

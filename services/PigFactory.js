@@ -27,6 +27,21 @@ PigDice.factory("PigFactory", function(){
     hold: function(){
       this.switchActivePlayer();
       this.currentScore = 0;
+    },
+    checkWinner: function(){
+      if(this.player1>100){
+        alert("player1 wins");
+        this.newGame();
+      }else if(this.player2>100){
+        alert("player2 wins");
+        this.newGame();
+      }
+    },
+    newGame: function(){
+      this.player1 = 0;
+      this.player2 = 0;
+      this.currentScore = 0;
+      this.activePlayer = 1;
     }
   };
   return factory;

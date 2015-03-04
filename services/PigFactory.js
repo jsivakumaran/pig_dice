@@ -2,8 +2,11 @@ PigDice.factory("PigFactory", function(){
   var factory = {
     player1: 0,
     player2: 0,
+    comp: 0,
     currentScore: 0,
     activePlayer: 1,
+    Ai: false,
+
     rollDice: function(){
       var roll = Math.floor(Math.random() * 6) + 1;
       if (roll === 1) {
@@ -18,8 +21,12 @@ PigDice.factory("PigFactory", function(){
     switchActivePlayer: function(){
       if(this.activePlayer === 1){
         this.player1 += this.currentScore;
-        this.activePlayer = 2;
-      }else{
+        if(this.Ai){
+          this.activePlayer = 3;
+        }else{
+          this.activePlayer=2;
+        }
+      }else {
         this.player2 += this.currentScore;
         this.activePlayer = 1;
       }
@@ -42,6 +49,9 @@ PigDice.factory("PigFactory", function(){
       this.player2 = 0;
       this.currentScore = 0;
       this.activePlayer = 1;
+    },
+    setAi: function(){
+      this.Ai = true;
     }
   };
   return factory;

@@ -12,6 +12,7 @@ PigDice.factory("PigAiFactory", function(){
           this.activePlayer = 1;
           this.currentScore = 0;
         } else {
+          alert("You rolled a 1, your current score is reset and the computer takes a turn")
           this.currentScore = 0;
           // this.activePlayer = 2;
           this.switchActivePlayer();
@@ -29,14 +30,12 @@ PigDice.factory("PigAiFactory", function(){
       } else {
         this.currentScore = 0;
         var x = this.rollDice();
-          // alert(x);
+        alert(x);
         if(x !== 1){
           var y = this.rollDice();
-            // alert(y);
         }
         if( x!==1 && y!==1){
           var z = this.rollDice();
-          // alert(z);
         }
         this.computer += this.currentScore;
         this.activePlayer = 1;
@@ -47,10 +46,10 @@ PigDice.factory("PigAiFactory", function(){
       this.currentScore = 0;
     },
     checkWinner: function(){
-      if(this.player1>100){
+      if(this.player1>=100){
         alert("player1 wins");
         this.newGame();
-      }else if(this.computer>100){
+      }else if(this.computer>=100){
         alert("computer wins");
         this.newGame();
       }

@@ -1,4 +1,4 @@
-var PigDice = angular.module('PigDice', ['ui.router']);
+var PigDice = angular.module('PigDice', ['ui.router', 'firebase']);
 
 PigDice.config(function($stateProvider){
 

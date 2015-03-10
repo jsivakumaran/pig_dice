@@ -1,9 +1,13 @@
-PigDice.factory("PigFactory", function(){
+PigDice.factory("PigFactory", ['$firebaseArray', function($firebaseArray){
+
+  var ref = new Firebase('glaring-inferno-5851.firebaseIO.com/pigfactory');
+  var data = $firebaseArray(ref);
   var factory = {
     player1: 0,
     player2: 0,
     currentScore: 0,
     activePlayer: 1,
+
 
     rollDice: function(){
       var roll = Math.floor(Math.random() * 6) + 1;
@@ -13,6 +17,7 @@ PigDice.factory("PigFactory", function(){
       }
       else {
         this.currentScore += roll;
+        data.$add({currentScore: this.currentScore});
       }
       return roll;
     },
@@ -46,5 +51,6 @@ PigDice.factory("PigFactory", function(){
     },
 
   };
+  factory.data = data;
   return factory;
-});
+}]);
